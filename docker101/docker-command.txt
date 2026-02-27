@@ -1,0 +1,36 @@
+docker -v // Docker version 28.0.4, build b8034c0
+docker run hello world
+docker ps 
+docker ps --all
+
+docker run busybox echo 'hello world is docker'
+docker busybox ls
+docker run busybox ping google.com
+
+docker stop CONTAINER ID
+docker pull busybox
+
+docker create busybox ping google.com
+docker start CONTAINER ID
+docker system prune
+docker rm CONTAINER ID
+docker run nginx
+
+docker exec -it CONTAINER ID sh
+docker exec -it CONTAINER ID bash
+cd usr/share/nginx/html/
+cat index.html
+docker run -d -p 80:80 nginx
+docker run -d -p 9000:80 nginx
+
+docker pull workpress
+docker pull mysql:5.7
+docker pull phpmyadmin/phpmyadmin
+
+**Create Network
+docker network create wordpress
+docker network ls
+
+docker run --name mysql --network wordpress -
+** join network
+docker network connect wordpress mysql
